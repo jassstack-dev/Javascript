@@ -12,13 +12,33 @@ btn.addEventListener('click', function(){
 
         if(value.trim() === "") return ;
 
-    task.innerHTML += ` <div class="todo">
-    <h3>${value}</h3>
-        <div class="btns">
-            <button class="add">Edit</button>
-            <button class="delete">Delete</button>
-        </div>
-    </div>`
+        let div = document.createElement('div')
+        div.classList.add('todo')
+
+        let h3 = document.createElement('h3')
+        h3.innerText = value
+
+
+        let btnDiv = document.createElement('div')
+    btnDiv.classList.add('btns')
+
+    
+    let button1 = document.createElement('button') 
+      button1.classList.add("add")
+        button1.innerText = 'Edit'
+
+
+    let button2 = document.createElement('button') 
+    button2.classList.add("delete")
+    button2.innerText = "Delete"
+
+    btnDiv.append(button1, button2)
+
+    div.append(h3, btnDiv)
+
+
+    task.append(div)
+
     inp.value = "";
 })
 
