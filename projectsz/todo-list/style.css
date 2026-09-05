@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f5f7;
+    font-family: Arial, sans-serif;
+}
+
+.task {
+    width: 420px;
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+#form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+#form input {
+    flex: 1;
+    height: 46px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+#form input:focus {
+    border-color: #222;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#btn {
+    padding: 0 20px;
+    background: #111;
+    color: #fff;
+}
+
+#btn:hover {
+    background: #333;
+}
+
+.todo-list {
+    padding: 18px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: #fafafa;
+}
+
+.todo{
+        display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: yellow;
+    padding: 10px 5px;
+        margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.todo-list h3 {
+    font-size: 18px;
+    color: #222;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btns button {
+    padding: 9px 18px;
+}
+
+.add {
+    background: #111;
+    color: white;
+}
+
+.delete {
+    background: #eee;
+    color: #222;
+}
+
+.btns button:hover {
+    transform: translateY(-1px);
+}
