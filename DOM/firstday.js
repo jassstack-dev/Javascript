@@ -16,6 +16,6 @@ console.dir(h1)
 // changiing of html
 
 // ---> innerHTML, innerText
-
 //   --> innerHTML - whole tag ko chnager karta hai 
 // innertext => ye sirf text chnage karta hai 
+
