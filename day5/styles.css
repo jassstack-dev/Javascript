@@ -1,0 +1,85 @@
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        .wrapper {
+            text-align: center;
+        }
+
+        .timer {
+            margin-bottom: 15px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+    
+      
+
+        .card {
+            width: 300px;
+            height: 200px;
+            background: #212121;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px;
+        }
+
+        .small-card {
+            width: 40px;
+            height: 40px;
+            background: red;
+            border-radius: 10px;
+            position: absolute;
+          
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            background: black;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        .overlay {
+    position: absolute;
+    inset: 0;
+display:none;
+align-items: center;
+justify-content: center;
+gap: 20px;
+flex-direction: column;
+  
+
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.overlay h1 {
+    color: white;
+    font-size: 100px;
+}
+
+.overlay h3{
+    color: Green;
+}
