@@ -9,6 +9,7 @@ html,body{
     height: 100%;
     width: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+position: relative;
 }
 
 nav{
@@ -16,8 +17,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 30px 50px;
-     position: relative;
-    z-index: 10;
+    
     
 }
 
@@ -89,22 +89,241 @@ ul li{
 }
 
 
-.cards{
-    
-    height: 100% ;
-    width: 100% ;
-     display: none;
+
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 1%;
-   
+    gap: 20px;
 }
 
-.card{
+.card {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
     width: 800px;
     height: 400px;
-    background-color: #2121212f;
-    border-radius: 5px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h2{
+    color: #fff;
+}
+
+
+
+.card .content{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.card .content a{
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    
+}
+
+
+
+.card1 {
+    display: none;
+    background-color: #4B164D;
+    top: -5%;
+    
+}
+
+.card2 {
+
+  display: none;
+    background-color: red;
+       top: -5%;
+     right: 11%;
+}
+
+.card3 {
+    display: none;
+    background-color: blue;
+       top: -5%;
+       right: 3%;
+}
+
+
+
+
+
+
+/* ============================================================
+   WRAPPER — centers everything
+   ============================================================ */
+.login-wrapper {
+    min-height: 50vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #ffffff;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-55%, -50%);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+.logo {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+/* ============================================================
+   HEADINGS
+   ============================================================ */
+.login-box h1 {
+    font-size: 34px;
+    font-weight: 800;
+    color: #1d1c1d;
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #454245;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    font-weight: 400;
+}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.email-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    color: #1d1c1d;
+    border: 1px solid #868686;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    background: #fff;
+}
+
+.email-input::placeholder {
+    color: #868686;
+}
+
+.email-input:focus {
+    border-color: #1264a3;
+    box-shadow: 0 0 0 3px rgba(18, 100, 163, 0.25);
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 700;
+    color: #ffffff;
+    background: #4a154b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+    transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.continue-btn:hover {
+    background: #3a0f3b;
+}
+
+.continue-btn:active {
+    transform: scale(0.985);
+}
+
+/* ============================================================
+   OR DIVIDER
+   ============================================================ */
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 26px 0;
+    color: #454245;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dddddd;
+}
+
+/* ============================================================
+   SOCIAL BUTTONS
+   ============================================================ */
+.social-buttons {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+
+.social-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 700;
+    color: #1d1c1d;
+    background: #ffffff;
+    border: 1px solid #868686;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.social-btn:hover {
+    background: #f8f8f8;
+    border-color: #1d1c1d;
+}
+
+.social-btn:active {
+    transform: scale(0.985);
 }
