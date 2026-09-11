@@ -9,8 +9,15 @@ const form = document.querySelector('form')
 
 
 
-let productArray = []
+let productArray = JSON.parse(localStorage.getItem('products')) || []
+
+
+
+
 let productIndex = null;
+
+
+
 
 
 function ui(){
@@ -53,6 +60,10 @@ order.innerHTML += `<div class="card">
     })
 }
 
+ui()
+
+
+
  
 
 
@@ -90,8 +101,10 @@ form.addEventListener('submit', function(e){
  if(productIndex != null){
     productArray[productIndex] = obj
     productIndex = null
+    localStorage.setItem('products', JSON.stringify(productArray))
  }else{
        productArray.push(obj)
+       localStorage.setItem('products', JSON.stringify(productArray))
  }
 
     ui()
@@ -129,6 +142,7 @@ function updateProduct(name){
 
 function deleteProduct(index){
     productArray.splice(index, 1)
+    localStorage.setItem('products', JSON.stringify(productArray))
     ui()
 }
 
