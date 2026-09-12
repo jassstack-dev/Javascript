@@ -1,0 +1,234 @@
+  
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7f6;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    /* Task Stats Header */
+    .stats-container {
+      display: flex;
+      justify-content: space-between;
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #e9ecef;
+    }
+
+    .stat-box {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stat-box:not(:last-child) {
+      border-right: 1px solid #dee2e6;
+    }
+
+    .stat-number {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #007bff;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Create Task Form */
+    .task-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .task-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .task-input:focus {
+      border-color: #007bff;
+    }
+
+    .btn-add {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-add:hover {
+      background-color: #218838;
+    }
+
+    /* Task List */
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 15px;
+      background-color: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+
+    .task-item.completed {
+      background-color: #f8f9fa;
+      border-color: #e9ecef;
+    }
+
+    .task-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .task-checkbox {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .task-text {
+      font-size: 1rem;
+      color: #495057;
+    }
+
+    .task-item.completed .task-text {
+      text-decoration: line-through;
+      color: #adb5bd;
+    }
+
+    /* Task Actions */
+    .task-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+    }
+
+    .btn-edit {
+      background-color: #ffc107;
+      color: #212529;
+    }
+
+    .btn-delete {
+      background-color: #dc3545;
+      color: white;
+    }
+
+
+    /* all task completed  */
+
+    .completed-taks-popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.completed-taks-box {
+    width: 380px;
+    padding: 35px 30px;
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.completed-taks-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #22c55e;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.completed-taks-box h2 {
+    margin: 0 0 10px;
+    font-size: 25px;
+}
+
+.completed-taks-box p {
+    margin: 0 0 25px;
+    color: #666;
+}
+
+.completed-taks-btn {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: white;
+    cursor: pointer;
+}
+ 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager UI</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Task Manager</h1>
+
+    <!-- 1. Stats Option on Top with Task Counting -->
+    <div class="stats-container">
+      <div class="stat-box">
+        <span class="stat-number total-task">0</span>
+        <span class="stat-label">Total Tasks</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number" id="completed-task" style="color: #28a745;">0</span>
+        <span class="stat-label">Completed</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number incompleted-task" style="color: #dc3545;">0</span>
+        <span class="stat-label ">Incomplete</span>
+      </div>
+    </div>
+
+    <!-- 2. Create Task Form -->
+    <form class="task-form" onsubmit="return false;">
+      <input type="text" class="task-input" placeholder="Add a new task..." required>
+      <button type="submit" class="btn-add">Add Task</button>
+    </form>
+
+    <!-- 3. Task List Below -->
+    <ul class="task-list">
+
+      <!-- Incomplete Task Example 1 -->
+      
+
+     
+      <!-- Completed Task Example 1 -->
+      <!-- <li class="task-item completed">
+        <div class="task-content">
+          <input type="checkbox" class="task-checkbox" id="task-4" checked>
+          <label for="task-4" class="task-text">Setup project repository on GitHub</label>
+        </div>
+        <div class="task-actions">
+          <button type="button" class="btn btn-edit">Update</button>
+          <button type="button" class="btn btn-delete">Delete</button>
+        </div>
+      </li> -->
+
+    
+
+    </ul>
+  </div>
+
+  <!-- all task completed -->
+   <div class="completed-taks-popup">
+    <div class="completed-taks-box">
+        <div class="completed-taks-icon">✓</div>
+        <h2>All Tasks Completed!</h2>
+        <p>Great job! You have completed all your tasks.</p>
+        <button class="completed-taks-btn">Continue</button>
+    </div>
+</div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
