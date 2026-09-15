@@ -4,6 +4,8 @@ const form = document.querySelector('.form')
 const products = document.querySelector('.products')
 const productForm = document.querySelector('form')
 const successPopup = document.querySelector('.prdCreated')
+const cartNumber = document.querySelector('.cart span')
+const cart = document.querySelector('.cart')
 
 
 
@@ -95,7 +97,11 @@ ui()
 
 // see product in cart
 
-let cartProduct = []
+let cartProduct = JSON.parse(localStorage.getItem("cartProducts")) || []
+
+console.log(cartProduct.length)
+
+ cartNumber.textContent = cartProduct.length
 
 products.addEventListener('click', function(e){
     if(e.target.classList.contains('buyBtn')){
@@ -104,40 +110,25 @@ products.addEventListener('click', function(e){
         let selectProduct = productArr[index]
 
         cartProduct.push(selectProduct)
-        console.log(cartProduct)
+       localStorage.setItem('cartProducts', JSON.stringify(cartProduct))
+    
+ cartNumber.textContent = cartProduct.length  
     }
 })
 
 
 // add to cart
 
-const buyBtn = document.querySelectorAll('.buyBtn')
-const cartNumber = document.querySelector('.cart span')
-const cart = document.querySelector('.cart')
-
-
-let productInCart = 0
-
-buyBtn.forEach(function(btn){
-    
-btn.addEventListener('click', function(){
-
-
-productInCart += 1
-
-cartNumber.textContent = productInCart
 
 
 
-})
 
-})
 
 const cartProducts = document.querySelector('.cart-products')
 
 function cartUi(){
     cartProducts.innerHTML = ""
-    cartProduct.forEach(function(e){
+    cartProduct.forEach(function(e, index){
  cartProducts.innerHTML += ` <div class="cart-product">
 
                 <div class="cart-img">
@@ -159,19 +150,36 @@ function cartUi(){
                     </div>
                 </div>
 
-                <button class="remove-cart">
+                <button class="remove-cart" data-set = "${index}">
                     Remove
                 </button>
 
             </div>`
 
+
+
     })
 }
+
+
 
 cart.addEventListener('click', function(){
         products.style.display = 'none'
      form.style.display = 'none'
     cartUi()
+})
+
+
+cartProducts.addEventListener('click', function(e){
+    if(e.target.classList.contains('remove-cart')){
+        let index = e.target.dataset.set
+        cartProduct.splice(index,1)
+        localStorage.setItem('cartProducts', JSON.stringify(cartProduct))
+        cartUi()
+        cartNumber.textContent = cartProduct.length 
+        console.log(cartProduct)
+    }
+
 })
 
 
