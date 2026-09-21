@@ -8,11 +8,7 @@
 </head>
 <body>
     
-<!-- <div class="can-save">
-    <button class="btn" id="cancel">Cancel</button>
-    <button class="btn" id="save">Save</button>
-</div> -->
-<section class="add">
+    <section class="add">
     <h1>Add Transaction</h1>
     <div class="expen-income">
     <div class="expBtn" id="expense">Expense</div>
@@ -22,7 +18,8 @@
 
 <div class="container ">
     
-    <form >
+    <form id="expenseForm">
+        <p>Expense form</p>
         <label for="name">Money</label>
         <input type="number" placeholder="Enter the amount"><br>
         <label>Date</label>
@@ -40,7 +37,80 @@
         <textarea name="" id=""></textarea>
         <button class="btn" id="save">submit</button>
     </form>
+    <!-- income form -->
+   
+<form id="incomeForm">
+    <p>Income form</p>
+   <label for="name">Money</label>
+        <input type="number" placeholder="Enter the amount"><br>
+        <label>Date</label>
+        <input type="date" name="date" id=""><br>
+        <label for="">Category</label>
+        <select name="" id="">
+            <option value="" disabled selected>Option</option> <option value="Salary">Salary</option> <option value="Freelancing">Freelancing</option> <option value="Business">Business</option> <option value="Investment">Investment</option> <option value="Other">Other</option>
+        </select><br>
+        <label for="">Note</label>
+        <textarea name="" id=""></textarea>
+        <button class="btn" id="save">submit</button>
+</form>
+
+
 </div>
+
+
+<!-- dashboard -->
+
+<section class="dashboard">
+    <!-- Top Header & Action Buttons -->
+    <div class="dash-header">
+        <div class="dash-title">
+            <h1>Dashboard</h1>
+            <p>Track your financial flow</p>
+        </div>
+      
+    </div>
+
+    <!-- Income & Expense Cards -->
+    <div class="stats-grid">
+        <div class="stat-card income-card">
+            <span class="card-label" >Total Income</span>
+            <h3 class="amount income" id="totolIncome" >0</h3>
+        </div>
+        <div class="stat-card expense-card">
+            <span class="card-label">Total Expense</span>
+            <h3 class="amount expense" id="totalExpense">0</h3>
+        </div>
+    </div>
+
+    <!-- Remaining Balance & Progress Bar -->
+    <div class="balance-card">
+        <div class="balance-info">
+            <span class="card-label">Remaining Balance</span>
+            <h2 class="balance-amount">₹0</h2>
+        </div>
+        <div class="progress-details">
+            <span>Budget Utilized</span>
+            <span id="progress-bar">65%</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" style="width: 100%;"></div>
+        </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="transactions-section">
+        <h2>Recent Transactions</h2>
+        <div class="transaction-list">
+           
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
 
 
 
