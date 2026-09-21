@@ -27,7 +27,7 @@ incomeBtn.addEventListener('click', function(){
 addExpenseIncome()
 let expense = JSON.parse(localStorage.getItem("expense")) || [];
 
-
+// localStorage.removeItem('expense')
 
 
 function transactionUi(){
@@ -156,7 +156,7 @@ progressBarLine.style.width = `${percentage}%`
 }
 
 
-// dashboard()
+dashboard()
 
 
 
