@@ -1,6 +1,7 @@
-import axios from 'axios'
+
 import React, { useEffect, useState } from 'react'
 import UserCard from '../components/UserCard'
+import { axiosInstance } from '../config/axiosInstance'
 
 const UsersPage = () => {
 
@@ -11,7 +12,7 @@ const UsersPage = () => {
 async function usersApi(){
     try{
 
-const res = await axios.get('https://dummyjson.com/users')
+const res = await axiosInstance.get('/users')
 // console.log(res.data.users)
 setUsersData(res.data.users)
 setPageLoading(false)

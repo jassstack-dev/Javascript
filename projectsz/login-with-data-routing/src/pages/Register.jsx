@@ -1,34 +1,17 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { MyStore } from "../context/AuthContext";
+import { useAuth } from "../hooks/useAuth";
 
 const Register = () => {
 
-    const {registerUser, setRegisterUser,} = useContext(MyStore)
+   const {register,handleSubmit,errors,registerFormSubmit,watch} = useAuth()
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
 
-  const formSubmit = (data) => {
-    // console.log(data);
 
-   let isExist = registerUser.some((val)=> val.email === data.email)
+const password = watch("password");
 
-   if(isExist){
-    alert('email exist')
-    return
-   }
-
-   const arr = [...registerUser, data]
-    setRegisterUser(arr)
-    localStorage.setItem('registerUser', JSON.stringify(arr))
-  }; 
-
-  const password = watch("password");
+ 
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
@@ -44,7 +27,7 @@ const Register = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit(formSubmit)} className="space-y-5">
+        <form onSubmit={handleSubmit(registerFormSubmit)} className="space-y-5">
 
           {/* Name */}
           <div>

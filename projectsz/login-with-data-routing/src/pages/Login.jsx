@@ -3,32 +3,16 @@ import { useForm } from "react-hook-form";
 import { MyStore } from "../context/AuthContext";
 import { useNavigate } from "react-router";
 
+import { useAuth } from "../hooks/useAuth";
+
 
 const Login = () => {
 
-    const navigate = useNavigate()
+   
 
-    const { setLoggedInUser,registerUser} = useContext(MyStore)
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+const {register,handleSubmit,errors,loginFormSubmit} = useAuth()
+// console.log(data)
 
-  const formSubmit = (data) => {
-    console.log(data);
-
-    let isloggedIn = registerUser.find((val)=> val.email === data.email && val.password === data.password)
-
-    if(!isloggedIn){
-      alert('invalid credential') 
-    }
-
-    
-    setLoggedInUser(data)
-localStorage.setItem('loggedInUser', JSON.stringify(data))
-    navigate('/main')
-  };
 
   
 
@@ -45,7 +29,7 @@ localStorage.setItem('loggedInUser', JSON.stringify(data))
           </p>
         </div>
 
-        <form onSubmit={handleSubmit(formSubmit)} className="space-y-5">
+        <form onSubmit={handleSubmit(loginFormSubmit)} className="space-y-5">
           
           {/* Email */}
           <div>

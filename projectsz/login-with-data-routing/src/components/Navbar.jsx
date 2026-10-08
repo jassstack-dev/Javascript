@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router'
+import { MyStore } from '../context/AuthContext'
+import { toast } from 'react-toastify'
 
 const Navbar = () => {
+
+  const {setLoggedInUser} = useContext(MyStore)
+
   return (
     <div className='border-r border-gray-500 mr-2 flex flex-col justify-between pb-2 ' >
         <div>
@@ -12,7 +17,15 @@ const Navbar = () => {
             <NavLink className={({isActive})=> isActive? "font-bold text-red-500 border-gray-500" : "text-black border-gray-500"} to={"/main/products"}>Products</NavLink>
         </div>
         </div>
-        <button className='bg-red-600 text-white py-1 px-2 rounded mr-2 font-bold'>logout</button>
+        <button onClick={
+          ()=>{
+            console.log('clicked')
+            localStorage.removeItem('loggedInUser')
+            setLoggedInUser(null)
+            toast.success('user logged out')
+
+          }
+        } className='bg-red-600 text-white py-1 px-2 rounded mr-2 font-bold'>logout</button>
     </div>
   )
 }
