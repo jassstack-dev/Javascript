@@ -95,7 +95,7 @@ class BankAccount {
       type: type,
       amount: amount,
       balance: this.balance,
-      date: new Date()
+      date: new Date(),
     });
   }
 
@@ -141,7 +141,7 @@ class BankAccount {
       accountNumber: this.accountNumber,
       accountType: this.accountType,
       bankName: this.bankName,
-      balance: this.balance
+      balance: this.balance,
     };
   }
 
@@ -178,7 +178,6 @@ class BankAccount {
   }
 }
 
-
 // Create accounts
 
 const bank1 = new BankAccount(
@@ -186,25 +185,18 @@ const bank1 = new BankAccount(
   90909090,
   "Saving Account",
   "Canara Bank",
-  0
+  0,
 );
 
-const bank2 = new BankAccount(
-  "Krishna",
-  90909091,
-  "Saving Account",
-  "SBI",
-  0
-);
+const bank2 = new BankAccount("Krishna", 90909091, "Saving Account", "SBI", 0);
 
 const bank3 = new BankAccount(
   "Rahul",
   90909092,
   "Saving Account",
   "Kotak Bank",
-  4000
+  4000,
 );
-
 
 // Perform operations
 
@@ -220,14 +212,12 @@ console.log(bank1.transferMoney(1500, bank2));
 // 4. Rahul tries to transfer ₹10000 to Vimal
 console.log(bank3.transferMoney(10000, bank1));
 
-
 // Final account details
 console.log("FINAL ACCOUNT DETAILS");
 
 console.log(bank1.getAccountDetails());
 console.log(bank2.getAccountDetails());
 console.log(bank3.getAccountDetails());
-
 
 // Transaction histories
 console.log("VIMAL HISTORY");
