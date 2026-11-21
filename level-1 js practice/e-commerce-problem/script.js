@@ -331,8 +331,7 @@ let appleProductRevenue = appleProduct.reduce((acc,val)=>{
 let Dashboard = products.reduce((acc,val)=>{
     acc.totalProducts += 1
     acc.activeProducts += val.isActive
-    acc.inactiveProducts += !val.isActive ? 0 : 1
-
+    acc.inactiveProducts += val.inActive
     acc.totalStock += val.stock
     acc.totalSold += val.sold
     acc.inventoryValue += val.price * val.stock

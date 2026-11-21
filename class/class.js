@@ -80,7 +80,7 @@ class Student{
     }
 }
 
-const student1 = new Student('jass', 101)
+const student1 = new Student('jass', 101)  
 const student2 = new Student('vimal', 'vimal@gmail.com')
 const student3 = new Student('jassubhai', 'vimlajass@gmail.con')
 

@@ -9,7 +9,7 @@ export function ContextProvider({ children }) {
   const [ZidioUser, setZidioUser] = useState(() => {
     return JSON.parse(localStorage.getItem("registerUser")) || [];
   });
-//   console.log(ZidioUser);
+  //   console.log(ZidioUser);
 
   // login user
   const [loginUser, setloginUser] = useState(() => {
@@ -20,7 +20,7 @@ export function ContextProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-   const productApi = async () => {
+  const productApi = async () => {
     try {
       const res = await axiosInstance.get("/products");
       setProducts(res.data);
@@ -39,7 +39,7 @@ export function ContextProvider({ children }) {
   // tasks
   const [tasks, setTasks] = useState([]);
 
-    async function taskApi() {
+  async function taskApi() {
     try {
       const res = await axios.get("https://dummyjson.com/todos");
       setTasks(res.data.todos);
@@ -54,20 +54,19 @@ export function ContextProvider({ children }) {
     taskApi();
   }, []);
 
-//   team
-const [UserData, setUserData] = useState([])
-  const [loadingData, setloadingData] = useState(true)
- const userApi =async ()=>{
-const res =await axiosInstance.get('/users')
-// console.log(res.data)
-setUserData(res.data)
-setloadingData(false)
+  //   team
+  const [UserData, setUserData] = useState([]);
+  const [loadingData, setloadingData] = useState(true);
+  const userApi = async () => {
+    const res = await axiosInstance.get("/users");
+    // console.log(res.data)
+    setUserData(res.data);
+    setloadingData(false);
+  };
 
-    }
-
-    useEffect(()=>{
-        userApi()
-    },[])
+  useEffect(() => {
+    userApi();
+  }, []);
 
   return (
     <Mystore.Provider
@@ -78,13 +77,13 @@ setloadingData(false)
         setloginUser,
         products,
         setProducts,
-        tasks, 
+        tasks,
         setTasks,
         UserData,
         setUserData,
         loading,
         loadingData,
-        setloadingData 
+        setloadingData,
       }}
     >
       {children}

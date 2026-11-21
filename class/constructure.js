@@ -115,3 +115,6 @@ const bank1 = new BankAccount('vimal', 1500, 'canera bank')
 bank1.deposit(5090)
 bank1.withdraw(6590)
 bank1.checkBalance()
+
+
+
