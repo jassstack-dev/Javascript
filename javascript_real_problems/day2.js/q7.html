@@ -1,0 +1,32 @@
+<input
+  type="text"
+  id="search"
+  placeholder="Search customers..."
+/>
+
+<script>
+
+    const input = document.querySelector('input')
+
+
+   
+     let time;
+    input.addEventListener('input', (e)=>{
+    
+       const data = e.target.value
+
+
+
+         clearTimeout(time)
+        
+
+    time = setTimeout(()=>{
+        console.log(data)
+       },3000)
+
+
+
+     
+    })
+  
+</script>
